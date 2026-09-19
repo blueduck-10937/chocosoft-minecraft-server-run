@@ -49,7 +49,7 @@ cls
 echo.
 echo _____________
 echo 1 : Paper
-echo 2: Vanilla (bata) (사용 중지)
+echo 2: Vanilla ( Beta ) (사용 중지)
 echo 3: 돌아가기
 echo _____________
 
@@ -76,7 +76,8 @@ echo 4: Paper 1.21.3
 echo 5: Paper 1.21.4
 echo 6: Paper 26.1.2
 echo 7: Paper 26.2
-echo 8: 돌아가기
+echo 8: Paper 26.3 ( Beta )
+echo 9: 돌아가기
 echo _____________
 echo by paperMC
 
@@ -91,7 +92,8 @@ if %a%==4 goto :paper1.21.3
 if %a%==5 goto :paper1.21.4
 if %a%==6 goto :paper26.1.2
 if %a%==7 goto :paper26.2
-if %a%==8 goto main
+if %a%==8 goto :paper26.3
+if %a%==9 goto main
 
 ::=====================
 
@@ -574,6 +576,82 @@ goto menu
 ::======================================
 ::======================================
 ::======================================
+
+:paper26.3
+cls
+echo.
+echo ______________________
+echo   사용 버킷 : Paper
+echo.
+echo      1 : 2GB
+echo      2 : 4GB
+echo      3 : 8GB
+echo     4 : 12GB
+echo     5 : 돌아가기
+echo ________________________
+echo.
+
+set /p b=번호를 선택하세요 : 
+
+if %b%==1 goto paper26.3-2gb
+if %b%==2 goto paper26.3-4gb
+if %b%==3 goto paper26.3-8gb
+if %b%==4 goto paper26.3-12gb
+if %b%==5 goto main
+pause
+goto main
+
+:paper26.3-2gb
+cls
+echo.
+echo ----------------------
+echo.
+echo     사용 버킷 : Paper
+echo     사용 메모리 : 2GB
+echo     빌드 : 21
+echo.
+java -Xms1G -Xmx2G -jar kit\paper-26.3-21.jar nogui
+pause
+goto main
+
+:paper26.3-4gb
+cls
+echo.
+echo ----------------------
+echo.
+echo     사용 버킷 : Paper
+echo     사용 메모리 : 4GB
+echo     빌드 : 21
+echo.
+java -Xms1G -Xmx4G -jar kit\paper-26.3-21.jar nogui
+pause
+goto main
+
+:paper26.3-8gb
+cls
+echo.
+echo ----------------------
+echo.
+echo     사용 버킷 : Paper
+echo     사용 메모리 : 8GB
+echo     빌드 : 21
+echo.
+java -Xms1G -Xmx8G -jar kit\paper-26.3-21.jar nogui
+pause
+goto main
+
+:paper26.3-12gb
+cls
+echo.
+echo ----------------------
+echo.
+echo     사용 버킷 : Paper
+echo     사용 메모리 : 12GB
+echo     빌드 : 21
+echo.
+java -Xms2G -Xmx12G -jar kit\paper-26.3-21.jar nogui
+pause
+goto menu
 
 
 :: ========================
